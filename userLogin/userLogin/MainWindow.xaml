@@ -1,0 +1,87 @@
+﻿<Window x:Class="userLogin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:userLogin"
+        mc:Ignorable="d"
+        Title="ACC" Name="esasSehife" Height="350" Width="300" Background="CadetBlue" Foreground="Yellow">
+    <Grid Margin="-2,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="176*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Name="SignInPanel" Visibility="Visible" Grid.ColumnSpan="3" HorizontalAlignment="Left" Width="292">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="38*"/>
+                <ColumnDefinition Width="31*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="52*"/>
+                <RowDefinition Height="217*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="47,42,0,0" TextWrapping="Wrap" Text="Istfadəçi adı" VerticalAlignment="Top" Height="20" Width="127" Grid.ColumnSpan="2" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Left" Height="20" Margin="46,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Grid.Row="1"><Run Text="Şifrə"/></TextBlock>
+            <TextBox Name="Username" HorizontalAlignment="Left" Height="20" Margin="46,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Grid.Row="1" Grid.ColumnSpan="2"/>
+            <Button BorderThickness="0"  Background="Yellow" Foreground="#2891CA" Name="signIn" Content="Sign In" Height="25" Margin="46,174,51,0" VerticalAlignment="Top" Click="signIn_Click" Grid.Row="1"/>
+            <Button BorderThickness="0"  Background="Yellow" Foreground="#2891CA" Name="signUp" Content="Qeydiyyat" HorizontalAlignment="Left" Height="25" Margin="114,174,0,0" VerticalAlignment="Top" Width="59" Click="signUp_Click" Grid.Row="1" Grid.ColumnSpan="2"/>
+            <PasswordBox Name="Password" HorizontalAlignment="Left" Height="21" Margin="47,133,0,0" VerticalAlignment="Top" Width="127" Grid.Row="1" Grid.ColumnSpan="2"/>
+            <TextBlock Foreground="Red" HorizontalAlignment="Left" Margin="10,10,0,0" Name="notification" Visibility="Visible" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="2" Grid.Row="1" Height="27"/>
+            <TextBlock Foreground="Yellow" FontSize="40" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ACC" VerticalAlignment="Top" Margin="38,8,0,0" Width="92" Height="52" RenderTransformOrigin="-0.332,0.608">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-19.402"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-10.923"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Grid>
+        <Grid Name="SignUpPanel" Visibility="Collapsed" Margin="0,26,0,23" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="81*"/>
+                <ColumnDefinition Width="16*"/>
+                <ColumnDefinition Width="145*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="46,45,0,0" TextWrapping="Wrap" Text="Username*" VerticalAlignment="Top" Height="20" Width="67" Grid.ColumnSpan="3"/>
+            <TextBlock HorizontalAlignment="Left" Height="20" Margin="47,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Grid.ColumnSpan="3"><Run Text="Password*"/></TextBlock>
+            <TextBox Name="newIstfad" HorizontalAlignment="Left" Height="26" Margin="46,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Grid.ColumnSpan="3"/>
+            <PasswordBox Name="Shifre" HorizontalAlignment="Left" Height="25" Margin="47,126,0,0" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="3"/>
+            <TextBlock Height="25" Margin="47,156,140,0" TextWrapping="Wrap" Text="Ad*" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+            <TextBox HorizontalAlignment="Left" Height="25" Margin="46,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="3" Name="ad"/>
+            <TextBlock HorizontalAlignment="Left" Height="25" Margin="47,211,0,0" TextWrapping="Wrap" Text="Soyad*" VerticalAlignment="Top" Width="55" Grid.ColumnSpan="3"/>
+            <TextBox Name="soyad" HorizontalAlignment="Left" Height="25" Margin="47,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="3"/>
+            <TextBlock HorizontalAlignment="Left" Height="24" Margin="49,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="3"><Run Text="Telefon n"/><Run Text="ömrəsi"/></TextBlock>
+            <TextBox Name="telNom" HorizontalAlignment="Left" Height="26" Margin="49,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="3"/>
+            <Button Click="qeydiyyat_Click" Name="qeydiyyat" BorderThickness="0"  Background="Yellow" Foreground="#2891CA" Content="Qeydiyyat" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="47,422,0,0" Grid.ColumnSpan="3" />
+            <TextBlock Foreground="Red" Name="notificationSecond" HorizontalAlignment="Left" Height="20" Margin="10,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="3"/>
+            <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Text="Qeydiyyat" Grid.ColumnSpan="3"/>
+            <TextBlock Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="22" Margin="19,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"><Run Text="* Bo"/><Run Text="ş buraxıla bi"/><Run Text="lməzlər"/></TextBlock>
+            <TextBlock Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="24" Margin="49,326,0,0" TextWrapping="Wrap" Text="Elektron poçt" VerticalAlignment="Top" Width="103"/>
+            <TextBox Name="eMail" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="26" Margin="46,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+            <Border BorderBrush="Yellow" BorderThickness="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="20" Margin="10,395,0,0" VerticalAlignment="Top" Width="222"/>
+            <Border BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="1" Margin="0,19,0,0" VerticalAlignment="Top" Width="242"/>
+
+        </Grid>
+        <Grid Name="girish" Visibility="Collapsed" HorizontalAlignment="Left" Height="349" Margin="10,-3,0,0" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="3">
+            <TextBlock Foreground="Yellow" FontSize="40" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ACC" VerticalAlignment="Top" Margin="33,14,0,0" Width="91" Height="52" RenderTransformOrigin="-0.332,0.608" Grid.RowSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-19.402"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-10.923"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button BorderThickness="0" Foreground="#2891CA" Background="Yellow" Content="Kartlar" HorizontalAlignment="Left" Height="28" Margin="10,98,0,0" VerticalAlignment="Top" Width="155"/>
+            <Button Foreground="#2891CA" BorderThickness="0"  Background="Yellow" Content="Transactionlar" HorizontalAlignment="Left" Height="28" Margin="10,131,0,0" VerticalAlignment="Top" Width="155"/>
+            <Button Foreground="#2891CA" Background="Yellow" BorderThickness="0"  Content="Dövriyyə cədvəli" HorizontalAlignment="Left" Height="28" Margin="10,164,0,0" VerticalAlignment="Top" Width="155"/>
+        </Grid>
+        <TextBlock Name="salamlama" FontSize="20" Grid.Column="2" HorizontalAlignment="Left" Height="34" Margin="76,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333"/>
+
+    </Grid>
+</Window>
